@@ -15,7 +15,20 @@ Including another URLconf
 """
 from django.conf.urls import include, url
 from django.contrib import admin
+from django.views.generic.base import RedirectView
+
+from pollar import views
+
 
 urlpatterns = [
+    url(r'^favicon\.ico$', RedirectView.as_view(url='/static/favicon.ico', permanent=True)),
+    
     url(r'^admin/', include(admin.site.urls)),
+    
+    url(r'^/*$', views.home, name='home'),
+    url(r'^register/*$', views.register, name='register'),
+    url(r'^login_or_register/*$', views.login_or_register, name='login_or_register'),
+    url(r'^login/*$', views.login, name='login'),
+    url(r'^logout/*$', views.logout, name='logout'),
+    url(r'^home/*$', views.home, name='home'),
 ]

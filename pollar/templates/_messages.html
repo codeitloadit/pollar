@@ -1,0 +1,13 @@
+{% for message in messages %}
+    <button class="btn btn-negative btn-block btn-outlined message">{{ message }}<span class="icon icon-trash messageicon"></span></button>
+{% endfor %}
+
+{% block javascript %}
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('.message').click(function() {
+                $(this).fadeOut();
+            });
+        });
+    </script>
+{% endblock javascript %}
