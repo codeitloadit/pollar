@@ -25,7 +25,7 @@ urlpatterns = [
     
     url(r'^admin/', include(admin.site.urls)),
     
-    url(r'^/*$', views.home, name='home'),
+    url(r'^/*$', views.landing, name='landing'),
     url(r'^register/*$', views.register, name='register'),
     url(r'^login_or_register/*$', views.login_or_register, name='login_or_register'),
     url(r'^login/*$', views.login, name='login'),

@@ -8,12 +8,12 @@ from django.template.response import TemplateResponse
 from django.views.decorators.http import require_GET, require_POST
 
 
-def home(request):
+def landing(request):
     # if request.user.is_authenticated():
     #     return HttpResponseRedirect(reverse('home'))
     # else:
     #     return HttpResponseRedirect(reverse('login_or_register'))
-    return TemplateResponse(request, 'home.html')
+    return TemplateResponse(request, 'landing.html')
 
 
 def login_or_register(request):
@@ -57,3 +57,8 @@ def login(request):
 def logout(request):
     auth.logout(request)
     return HttpResponseRedirect(reverse('home'))
+
+
+@login_required
+def home(request):
+    return TemplateResponse(request, 'home.html')

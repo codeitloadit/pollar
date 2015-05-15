@@ -19,6 +19,14 @@
 		<link rel="stylesheet" href="{% static 'css/style.css' %}">
 
 		{% block javascript %}{% endblock javascript %}
+        <script type="text/javascript">
+            $(document).ready(function() {
+                // For debugging purposes only!
+                $('.title').click(function() {
+                    location.reload();
+                });
+            });
+        </script>
     </head>
 
     <body>
